@@ -1,0 +1,16 @@
+{
+  "name": "19thfeb",
+  "version": "1.0.0",
+  "description": "just some class stuff",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.1.9",
+    "server": "^1.0.41"
+  }
+}
