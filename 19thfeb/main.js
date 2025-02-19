@@ -48,7 +48,13 @@
 
 
 const http = require("http");
+const url= require("url");
+
 const server=http.createServer((req,res) => {
+
+    const parsedURL=url.parse(req.url,true)
+    console.log(parsedURL)
+
     if(req.method=="GET"){
         res.writeHead(200, "trying to GET huhh?")
         res.write("gettingggggg \n")
