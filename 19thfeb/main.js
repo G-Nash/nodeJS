@@ -52,6 +52,16 @@ const server=http.createServer((req,res) => {
     if(req.method=="GET"){
         res.writeHead(200, "trying to GET huhh?")
         res.write("gettingggggg")
+
+        if(req.url=="/movies"){
+            // res.writeHead(200, "Movieeeeeeee",{
+            //     "content-type":"application/json"
+            // })
+            res.write(JSON.stringify({
+                "movie": "Interstellar",
+                language: "English"
+            }))
+        }
         res.end()
     }
 
