@@ -54,15 +54,17 @@ const server=http.createServer((req,res) => {
 
     const parsedURL=url.parse(req.url,true)
     console.log(parsedURL)
+    const tickets=parsedURL.query.tickets
 
     if(req.method=="GET"){
         res.writeHead(200, "trying to GET huhh?")
         res.write("gettingggggg \n")
 
-        if(req.url=="/movies"){
+        if(parsedURL.pathname=="/interstellar"){
             res.write(JSON.stringify({
                 "movie": "Interstellar",
-                "language": "English"
+                "language": "English",
+                "number of tickets": tickets
             }))
         }
         res.end()
