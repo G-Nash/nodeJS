@@ -55,6 +55,8 @@ const server=http.createServer((req,res) => {
     const parsedURL=url.parse(req.url,true)
     console.log(parsedURL)
     const tickets=parsedURL.query.tickets
+    const movie=parsedURL.query.movie
+    const language=parsedURL.query.language
 
     if(req.method=="GET"){
         res.writeHead(200, "trying to GET huhh?")
@@ -67,6 +69,23 @@ const server=http.createServer((req,res) => {
                 "number of tickets": tickets
             }))
         }
+
+        if(parsedURL.pathname=="/harrypotter"){
+            res.write(JSON.stringify({
+                "movie": "HarryPotter",
+                "language": "English",
+                "number of tickets": tickets
+            }))
+        }
+
+        else{
+            res.write(JSON.stringify({
+              "movie": movie,
+              "language": language,
+              "number of tickets": tickets 
+            }))
+        }
+
         res.end()
     }
 
